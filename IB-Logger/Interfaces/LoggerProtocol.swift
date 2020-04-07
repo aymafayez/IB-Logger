@@ -10,7 +10,7 @@ import Foundation
 
 public protocol LoggerProtocol {
     func log(message: String, level: LogLevel)
-    func fetch() -> String
+    func fetch() -> [String]
 }
 
 public enum LogLevel {
