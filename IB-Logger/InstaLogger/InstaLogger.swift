@@ -22,7 +22,7 @@ public class InstaLogger: LoggerProtocol {
         storageProvider.clearLog(onSucces: {}, onFailure: {})
     }
     
-    public func log(message: String, level: LogLevel) {
+    public func log(message: String, level: LogLevel) throws  {
         let message = validator.validate(message: message)
         let date = Date()
         let logModel = LogModel(message: message, logLevel: level, date: date)
@@ -30,6 +30,9 @@ public class InstaLogger: LoggerProtocol {
         if validator.validate(messages: messagesStrings) {
             messages.append(logModel)
             storeMessage(messageModel: logModel)
+        }
+        else {
+            throw InstaError.sessionLimitExceed
         }
     }
     

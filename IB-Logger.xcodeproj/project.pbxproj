@@ -101,7 +101,7 @@
 		F7464F75243CEEEA001F4FDD /* IB-Logger */ = {
 			isa = PBXGroup;
 			children = (
-				F7464F8D243CEF77001F4FDD /* Interfaces */,
+				F7464F8D243CEF77001F4FDD /* Protocols */,
 				F7464FB2243D19CD001F4FDD /* StorageProvider */,
 				F7464FA3243CFF80001F4FDD /* LogModel */,
 				F7464F9C243CFBEC001F4FDD /* LogFormatter */,
@@ -126,7 +126,7 @@
 			path = "IB-LoggerTests";
 			sourceTree = "<group>";
 		};
-		F7464F8D243CEF77001F4FDD /* Interfaces */ = {
+		F7464F8D243CEF77001F4FDD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */,
@@ -134,7 +134,7 @@
 				F7464F8E243CEF8B001F4FDD /* LoggerProtocol.swift */,
 				F7464FB3243D1A00001F4FDD /* StorageProviderProtocol.swift */,
 			);
-			path = Interfaces;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F7464F94243CF2D2001F4FDD /* InstaLogger */ = {

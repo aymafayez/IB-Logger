@@ -9,11 +9,15 @@
 import Foundation
 
 public protocol LoggerProtocol {
-    func log(message: String, level: LogLevel)
+    func log(message: String, level: LogLevel) throws 
     func fetch() -> [String]
 }
 
 public enum LogLevel: String {
     case Error
     case Verbose
+}
+
+public enum InstaError: Error {
+    case sessionLimitExceed
 }

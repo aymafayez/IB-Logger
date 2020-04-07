@@ -41,7 +41,7 @@ class InstaLoggerTest: XCTestCase {
         let level = LogLevel.Verbose
         validatorMock.validateMessagesShouldReturnTrue = true
         instaLogger = InstaLogger(logValidator: validatorMock, logFormatter: formatterMock, storageProvider: storageProviderMock)
-        instaLogger.log(message: message, level: level)
+        try? instaLogger.log(message: message, level: level)
         let resultMessage = instaLogger.fetch()
         XCTAssertEqual(message, resultMessage[0])
     }
@@ -51,7 +51,7 @@ class InstaLoggerTest: XCTestCase {
         let level = LogLevel.Verbose
         validatorMock.validateMessagesShouldReturnTrue = false
         instaLogger = InstaLogger(logValidator: validatorMock, logFormatter: formatterMock, storageProvider: storageProviderMock)
-        instaLogger.log(message: message, level: level)
+        try? instaLogger.log(message: message, level: level)
         let resultMessage = instaLogger.fetch()
         XCTAssertEqual(resultMessage.count, 0)
     }
@@ -63,9 +63,9 @@ class InstaLoggerTest: XCTestCase {
         validatorMock.validateMessagesShouldReturnTrue = true
         let level = LogLevel.Verbose
         instaLogger = InstaLogger(logValidator: validatorMock, logFormatter: formatterMock, storageProvider: storageProviderMock)
-        instaLogger.log(message: message, level: level)
-        instaLogger.log(message: message1, level: level)
-        instaLogger.log(message: message2, level: level)
+        try? instaLogger.log(message: message, level: level)
+        try? instaLogger.log(message: message1, level: level)
+        try? instaLogger.log(message: message2, level: level)
         let resultMessage = instaLogger.fetch()
         XCTAssertEqual(message, resultMessage[0])
         XCTAssertEqual(message1, resultMessage[1])
