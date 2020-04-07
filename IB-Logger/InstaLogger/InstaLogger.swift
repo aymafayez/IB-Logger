@@ -9,8 +9,8 @@
 import Foundation
 
 public class InstaLogger: LoggerProtocol {
-    var messages: [String]
-    var validator: ValidatorProtocol
+    private var messages: [String]
+    private var validator: ValidatorProtocol
     
     init(logValidator: ValidatorProtocol) {
         messages = [String]()
@@ -19,7 +19,12 @@ public class InstaLogger: LoggerProtocol {
     
     public func log(message: String, level: LogLevel) {
         
-        
+        if validator.validate(message: message) {
+            
+        }
+        else {
+            
+        }
         
     }
     

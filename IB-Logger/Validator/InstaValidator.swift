@@ -10,10 +10,26 @@ import Foundation
 
 class InstaValidator: ValidatorProtocol {
     func validate(message: String) -> Bool {
-        return true
+        let size = message.utf8.count
+        if size >= 1024 {
+            return true
+        }
+        else {
+            return false
+        }
     }
     
     func validate(messages: [String]) -> Bool {
-        return true
+        var size = 0
+        for message in messages {
+            let messageSize = message.utf8.count
+            size = size + messageSize
+        }
+        if size >= 1024 {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }
