@@ -26,9 +26,7 @@ public class InstaLogger: LoggerProtocol {
         let message = validator.validate(message: message)
         let date = Date()
         let logModel = LogModel(message: message, logLevel: level, date: date)
-        let messagesStrings = self.messages.map { messageModel -> String in
-            return messageModel.message
-        }
+        let messagesStrings = getListOfLogMessages(messages: self.messages)
         if validator.validate(messages: messagesStrings) {
             messages.append(logModel)
             storeMessage(messageModel: logModel)
@@ -36,15 +34,8 @@ public class InstaLogger: LoggerProtocol {
     }
     
     public func fetch() -> [String] {
-        let sortedMessages = messages.sorted { (first, second) -> Bool in
-            first.date.compare(second.date) == .orderedAscending
-        }
-        var messagesString = [String]()
-        for messageModel in sortedMessages {
-            let messageString = logFormatter.format(message: messageModel.message, logLevel: messageModel.logLevel, date: messageModel.date.description)
-            messagesString.append(messageString)
-        }
-        return messagesString
+        let sortedMessages = getSortedMessages(messages: messages)
+        return getsortedStringMessages(sortedMessages: sortedMessages)
     }
     
     private func storeMessage(messageModel: LogModel) {
@@ -52,5 +43,27 @@ public class InstaLogger: LoggerProtocol {
         storageProvider.save(message: messageString, onSucces: {}, onFailure: {})
     }
     
+    private func getListOfLogMessages(messages: [LogModel]) -> [String] {
+        let messagesStrings = self.messages.map { messageModel -> String in
+            return messageModel.message
+        }
+        return messagesStrings
+    }
+    
+    private func getSortedMessages(messages: [LogModel]) -> [LogModel] {
+        let sortedMessages = messages.sorted { (first, second) -> Bool in
+            first.date.compare(second.date) == .orderedAscending
+        }
+        return sortedMessages
+    }
+    
+    private func getsortedStringMessages(sortedMessages: [LogModel]) -> [String] {
+        var messagesString = [String]()
+        for messageModel in sortedMessages {
+            let messageString = logFormatter.format(message: messageModel.message, logLevel: messageModel.logLevel, date: messageModel.date.description)
+            messagesString.append(messageString)
+        }
+        return messagesString
+    }
     
 }

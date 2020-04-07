@@ -22,9 +22,6 @@ class InstaValidator: ValidatorProtocol {
         }
     }
     
-    
-
-    
     func validate(messages: [String]) -> Bool {
         var size = 0
         for message in messages {

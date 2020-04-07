@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LogModel {
+struct LogModel {
     var message: String
     var logLevel: LogLevel
     var date: Date
