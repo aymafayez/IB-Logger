@@ -14,5 +14,6 @@ public protocol LoggerProtocol {
 }
 
 public enum LogLevel: String {
-    case hi
+    case Error
+    case Verbose
 }

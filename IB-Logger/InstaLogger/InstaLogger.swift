@@ -9,20 +9,21 @@
 import Foundation
 
 public class InstaLogger: LoggerProtocol {
-    private var messages: [String]
+    private var messages: [LogModel]
     private var validator: ValidatorProtocol
     private var logFormatter: LogFormatterProtocol
     
     init(logValidator: ValidatorProtocol, logFormatter: LogFormatterProtocol) {
-        messages = [String]()
+        messages = [LogModel]()
         self.validator = logValidator
         self.logFormatter = logFormatter
     }
     
     public func log(message: String, level: LogLevel) {
         if validator.validate(message: message) {
-            let message = logFormatter.format(message: message, logLevel: level, date: Date())
-            messages.append(message)
+            let logModel = LogModel(message: message, logLevel: level, date: Date())
+            messages.append(logModel)
+           // messages.append(message)
         }
         else {
             
@@ -31,7 +32,15 @@ public class InstaLogger: LoggerProtocol {
     }
     
     public func fetch() -> [String] {
-        return messages
+        let sortedMessages = messages.sorted { (first, second) -> Bool in
+            first.date.compare(second.date) == .orderedDescending
+        }
+        var messagesString = [String]()
+        for messageModel in sortedMessages {
+            let messageString = logFormatter.format(message: messageModel.message, logLevel: messageModel.logLevel, date: messageModel.date)
+            messagesString.append(messageString)
+        }
+        return messagesString
     }
     
     

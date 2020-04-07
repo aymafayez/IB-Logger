@@ -16,6 +16,7 @@
 		F7464F9B243CF580001F4FDD /* InstaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9A243CF580001F4FDD /* InstaValidator.swift */; };
 		F7464F9E243CFC03001F4FDD /* LogFormatterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */; };
 		F7464FA0243CFDD8001F4FDD /* InstaLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */; };
+		F7464FA2243CFF7B001F4FDD /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464FA1243CFF7B001F4FDD /* LogModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		F7464F9A243CF580001F4FDD /* InstaValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaValidator.swift; sourceTree = "<group>"; };
 		F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormatterProtocol.swift; sourceTree = "<group>"; };
 		F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaLogFormatter.swift; sourceTree = "<group>"; };
+		F7464FA1243CFF7B001F4FDD /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		F7464F75243CEEEA001F4FDD /* IB-Logger */ = {
 			isa = PBXGroup;
 			children = (
+				F7464FA3243CFF80001F4FDD /* LogModel */,
 				F7464F9C243CFBEC001F4FDD /* LogFormatter */,
 				F7464F97243CF4C6001F4FDD /* Validator */,
 				F7464F8D243CEF77001F4FDD /* Interfaces */,
@@ -134,6 +137,14 @@
 				F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */,
 			);
 			path = LogFormatter;
+			sourceTree = "<group>";
+		};
+		F7464FA3243CFF80001F4FDD /* LogModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7464FA1243CFF7B001F4FDD /* LogModel.swift */,
+			);
+			path = LogModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7464FA2243CFF7B001F4FDD /* LogModel.swift in Sources */,
 				F7464F9E243CFC03001F4FDD /* LogFormatterProtocol.swift in Sources */,
 				F7464FA0243CFDD8001F4FDD /* InstaLogFormatter.swift in Sources */,
 				F7464F9B243CF580001F4FDD /* InstaValidator.swift in Sources */,
