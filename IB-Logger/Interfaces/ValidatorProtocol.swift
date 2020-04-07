@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol ValidatorProtocol {
-    func validate(message: String) -> Bool
+    func validate(message: String) -> String
     func validate(messages: [String]) -> Bool
 }

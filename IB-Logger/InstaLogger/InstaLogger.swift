@@ -20,15 +20,9 @@ public class InstaLogger: LoggerProtocol {
     }
     
     public func log(message: String, level: LogLevel) {
-        if validator.validate(message: message) {
-            let logModel = LogModel(message: message, logLevel: level, date: Date())
-            messages.append(logModel)
-           // messages.append(message)
-        }
-        else {
-            
-        }
-        
+        let message = validator.validate(message: message)
+        let logModel = LogModel(message: message, logLevel: level, date: Date())
+        messages.append(logModel)
     }
     
     public func fetch() -> [String] {

@@ -10,23 +10,28 @@ import Foundation
 
 class InstaValidator: ValidatorProtocol {
     
-    func validate(message: String) -> Bool {
-        let size = message.utf8.count
-        if size <= 1024 {
-            return true
+    func validate(message: String) -> String {
+        let size = message.count
+        if size <= 1000 {
+            return message
         }
         else {
-            return false
+            var subString = message[0 ..< 1000]
+            subString = subString + "..."
+            return subString
         }
     }
+    
+    
+
     
     func validate(messages: [String]) -> Bool {
         var size = 0
         for message in messages {
-            let messageSize = message.utf8.count
+            let messageSize = message.count
             size = size + messageSize
         }
-        if size <=  5*1024 {
+        if size <=  5*1000 {
             return true
         }
         else {
@@ -34,4 +39,19 @@ class InstaValidator: ValidatorProtocol {
         }
     }
     
+}
+
+
+extension String {
+    subscript(_ range: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+        let end = index(start, offsetBy: min(self.count - range.lowerBound,
+                                             range.upperBound - range.lowerBound))
+        return String(self[start..<end])
+    }
+
+    subscript(_ range: CountablePartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+         return String(self[start...])
+    }
 }
