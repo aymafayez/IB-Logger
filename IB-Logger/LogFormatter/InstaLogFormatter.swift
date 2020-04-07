@@ -10,8 +10,8 @@ import Foundation
 
 class InstaLogFormatter: LogFormatterProtocol {
     
-    func format(message: String, logLevel: LogLevel, date: Date) -> String {
-        return date.description + " " + logLevel.rawValue + message 
+    func format(message: String, logLevel: LogLevel, date: String) -> String {
+        return "[ " + date + " " + logLevel.rawValue + " " + message + " ]"
     }
     
     

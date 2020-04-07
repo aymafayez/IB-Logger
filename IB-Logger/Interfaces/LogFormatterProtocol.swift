@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol LogFormatterProtocol {
-    func format(message: String, logLevel: LogLevel, date: Date) -> String
+    func format(message: String, logLevel: LogLevel, date: String) -> String
 }

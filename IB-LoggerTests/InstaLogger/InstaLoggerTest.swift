@@ -11,8 +11,13 @@ import XCTest
 
 class InstaLoggerTest: XCTestCase {
 
+    let validatorMock = InstaValidatorMock()
+    let formatterMock = InstaLogFormatterMock()
+    let storageProviderMock = StorageProviderMock()
+    var instaLogger: InstaLogger!
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+
     }
 
     override func tearDown() {
@@ -30,6 +35,44 @@ class InstaLoggerTest: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func test_log_addingCorrectMessage() {
+        let message = "Hello world"
+        let level = LogLevel.Verbose
+        validatorMock.validateMessagesShouldReturnTrue = true
+        instaLogger = InstaLogger(logValidator: validatorMock, logFormatter: formatterMock, storageProvider: storageProviderMock)
+        instaLogger.log(message: message, level: level)
+        let resultMessage = instaLogger.fetch()
+        XCTAssertEqual(message, resultMessage[0])
+    }
+    
+    func test_log_IfValidationFailed_DoNotaddingMessage() {
+        let message = "Hello world"
+        let level = LogLevel.Verbose
+        validatorMock.validateMessagesShouldReturnTrue = false
+        instaLogger = InstaLogger(logValidator: validatorMock, logFormatter: formatterMock, storageProvider: storageProviderMock)
+        instaLogger.log(message: message, level: level)
+        let resultMessage = instaLogger.fetch()
+        XCTAssertEqual(resultMessage.count, 0)
+    }
+    
+    func test_fetch_returnsStringsSortedByDate() {
+        let message = "Hello world"
+        let message1 = "Hello world 1"
+        let message2 = "Hello world 2"
+        validatorMock.validateMessagesShouldReturnTrue = true
+        let level = LogLevel.Verbose
+        instaLogger = InstaLogger(logValidator: validatorMock, logFormatter: formatterMock, storageProvider: storageProviderMock)
+        instaLogger.log(message: message, level: level)
+        instaLogger.log(message: message1, level: level)
+        instaLogger.log(message: message2, level: level)
+        let resultMessage = instaLogger.fetch()
+        XCTAssertEqual(message, resultMessage[0])
+        XCTAssertEqual(message1, resultMessage[1])
+        XCTAssertEqual(message2, resultMessage[2])
+    }
+    
+
     
     
 
