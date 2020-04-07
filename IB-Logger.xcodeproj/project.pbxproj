@@ -10,6 +10,7 @@
 		F7464F7D243CEEEA001F4FDD /* IB_Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7464F73243CEEEA001F4FDD /* IB_Logger.framework */; };
 		F7464F82243CEEEA001F4FDD /* IB_LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F81243CEEEA001F4FDD /* IB_LoggerTests.swift */; };
 		F7464F84243CEEEA001F4FDD /* IB_Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = F7464F76243CEEEA001F4FDD /* IB_Logger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7464F8F243CEF8B001F4FDD /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F8E243CEF8B001F4FDD /* LoggerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		F7464F7C243CEEEA001F4FDD /* IB-LoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IB-LoggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7464F81243CEEEA001F4FDD /* IB_LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IB_LoggerTests.swift; sourceTree = "<group>"; };
 		F7464F83243CEEEA001F4FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7464F8E243CEF8B001F4FDD /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		F7464F75243CEEEA001F4FDD /* IB-Logger */ = {
 			isa = PBXGroup;
 			children = (
+				F7464F8D243CEF77001F4FDD /* Interfaces */,
 				F7464F76243CEEEA001F4FDD /* IB_Logger.h */,
 				F7464F77243CEEEA001F4FDD /* Info.plist */,
 			);
@@ -84,6 +87,14 @@
 				F7464F83243CEEEA001F4FDD /* Info.plist */,
 			);
 			path = "IB-LoggerTests";
+			sourceTree = "<group>";
+		};
+		F7464F8D243CEF77001F4FDD /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				F7464F8E243CEF8B001F4FDD /* LoggerProtocol.swift */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 				TargetAttributes = {
 					F7464F72243CEEEA001F4FDD = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 					F7464F7B243CEEEA001F4FDD = {
 						CreatedOnToolsVersion = 11.1;
@@ -195,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7464F8F243CEF8B001F4FDD /* LoggerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +353,7 @@
 		F7464F88243CEEEA001F4FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -355,6 +369,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.A.F.IB-Logger";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +378,7 @@
 		F7464F89243CEEEA001F4FDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -386,6 +402,7 @@
 		F7464F8B243CEEEA001F4FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "IB-LoggerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,6 +420,7 @@
 		F7464F8C243CEEEA001F4FDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "IB-LoggerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
