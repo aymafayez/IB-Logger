@@ -13,6 +13,6 @@ public protocol LoggerProtocol {
     func fetch() -> [String]
 }
 
-public enum LogLevel {
+public enum LogLevel: String {
     case hi
 }

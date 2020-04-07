@@ -14,6 +14,8 @@
 		F7464F96243CF2F7001F4FDD /* InstaLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F95243CF2F7001F4FDD /* InstaLogger.swift */; };
 		F7464F99243CF4F2001F4FDD /* ValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F98243CF4F2001F4FDD /* ValidatorProtocol.swift */; };
 		F7464F9B243CF580001F4FDD /* InstaValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9A243CF580001F4FDD /* InstaValidator.swift */; };
+		F7464F9E243CFC03001F4FDD /* LogFormatterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */; };
+		F7464FA0243CFDD8001F4FDD /* InstaLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		F7464F95243CF2F7001F4FDD /* InstaLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaLogger.swift; sourceTree = "<group>"; };
 		F7464F98243CF4F2001F4FDD /* ValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorProtocol.swift; sourceTree = "<group>"; };
 		F7464F9A243CF580001F4FDD /* InstaValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaValidator.swift; sourceTree = "<group>"; };
+		F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormatterProtocol.swift; sourceTree = "<group>"; };
+		F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaLogFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		F7464F75243CEEEA001F4FDD /* IB-Logger */ = {
 			isa = PBXGroup;
 			children = (
+				F7464F9C243CFBEC001F4FDD /* LogFormatter */,
 				F7464F97243CF4C6001F4FDD /* Validator */,
 				F7464F8D243CEF77001F4FDD /* Interfaces */,
 				F7464F94243CF2D2001F4FDD /* InstaLogger */,
@@ -100,6 +105,7 @@
 		F7464F8D243CEF77001F4FDD /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */,
 				F7464F98243CF4F2001F4FDD /* ValidatorProtocol.swift */,
 				F7464F8E243CEF8B001F4FDD /* LoggerProtocol.swift */,
 			);
@@ -120,6 +126,14 @@
 				F7464F9A243CF580001F4FDD /* InstaValidator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		F7464F9C243CFBEC001F4FDD /* LogFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */,
+			);
+			path = LogFormatter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7464F9E243CFC03001F4FDD /* LogFormatterProtocol.swift in Sources */,
+				F7464FA0243CFDD8001F4FDD /* InstaLogFormatter.swift in Sources */,
 				F7464F9B243CF580001F4FDD /* InstaValidator.swift in Sources */,
 				F7464F8F243CEF8B001F4FDD /* LoggerProtocol.swift in Sources */,
 				F7464F96243CF2F7001F4FDD /* InstaLogger.swift in Sources */,
