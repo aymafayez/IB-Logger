@@ -14,7 +14,7 @@ Getting started:-
 
 For custom use :- 
 
-1- implement 
+- implement 
 public protocol ValidatorProtocol {
     func validate(message: String) -> String
     func validate(messages: [String]) -> Bool
@@ -27,12 +27,12 @@ public protocol StorageProviderProtocol {
     func clearLog(onSucces: () -> (),  onFailure: () -> ())
 }
 
-2- logger =  InstaLogger(logValidator: validatorObj, logFormatter: formatterObj, storageProvider: storageProviderObj)
-3- let message = "Hello world"
+- logger =  InstaLogger(logValidator: validatorObj, logFormatter: formatterObj, storageProvider: storageProviderObj)
+- let message = "Hello world"
    let level = LogLevel.Verbose
    logger.log(message: message, level: level)
-4- let messages = logger.fetch()
-5- outbut : "[ 2020-04-07 19:45:47 +0000 Error Hello World ]"
+- let messages = logger.fetch()
+- outbut : "[ 2020-04-07 19:45:47 +0000 Error Hello World ]"
 
 
 
