@@ -14,7 +14,7 @@ class InstaLoggerTest: XCTestCase {
     let validatorMock = InstaValidatorMock()
     let formatterMock = InstaLogFormatterMock()
     let storageProviderMock = StorageProviderMock()
-    var instaLogger: InstaLogger!
+    var instaLogger: InstaLogger = InstaLogger()
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 

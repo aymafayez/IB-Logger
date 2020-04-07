@@ -22,6 +22,14 @@ public class InstaLogger: LoggerProtocol {
         storageProvider.clearLog(onSucces: {}, onFailure: {})
     }
     
+    public init() {
+        messages = [LogModel]()
+        self.validator = InstaValidator()
+        self.logFormatter = InstaLogFormatter()
+        self.storageProvider = InstaStorageProvider()
+        storageProvider.clearLog(onSucces: {}, onFailure: {})
+    }
+    
     public func log(message: String, level: LogLevel) throws  {
         let message = validator.validate(message: message)
         let date = Date()
