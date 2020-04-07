@@ -14,19 +14,7 @@ Getting started:-
 
 For custom use :- 
 
-- implement 
-public protocol ValidatorProtocol {
-    func validate(message: String) -> String
-    func validate(messages: [String]) -> Bool
-}
-public protocol LogFormatterProtocol {
-    func format(message: String, logLevel: LogLevel, date: String) -> String
-}
-public protocol StorageProviderProtocol {
-    func save(message: String,  onSucces: () -> (),  onFailure: () -> ())
-    func clearLog(onSucces: () -> (),  onFailure: () -> ())
-}
-
+- implement public protocol ValidatorProtocol ,  LogFormatterProtocol, StorageProviderProtocol 
 - logger =  InstaLogger(logValidator: validatorObj, logFormatter: formatterObj, storageProvider: storageProviderObj)
 - let message = "Hello world"
    let level = LogLevel.Verbose
