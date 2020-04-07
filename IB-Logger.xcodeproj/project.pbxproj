@@ -17,6 +17,8 @@
 		F7464F9E243CFC03001F4FDD /* LogFormatterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */; };
 		F7464FA0243CFDD8001F4FDD /* InstaLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */; };
 		F7464FA2243CFF7B001F4FDD /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464FA1243CFF7B001F4FDD /* LogModel.swift */; };
+		F7464FA6243D091E001F4FDD /* InstaLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464FA5243D091E001F4FDD /* InstaLoggerTest.swift */; };
+		F7464FA9243D0971001F4FDD /* ValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7464FA8243D0971001F4FDD /* ValidatorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		F7464F9D243CFC03001F4FDD /* LogFormatterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormatterProtocol.swift; sourceTree = "<group>"; };
 		F7464F9F243CFDD8001F4FDD /* InstaLogFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaLogFormatter.swift; sourceTree = "<group>"; };
 		F7464FA1243CFF7B001F4FDD /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
+		F7464FA5243D091E001F4FDD /* InstaLoggerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaLoggerTest.swift; sourceTree = "<group>"; };
+		F7464FA8243D0971001F4FDD /* ValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		F7464F80243CEEEA001F4FDD /* IB-LoggerTests */ = {
 			isa = PBXGroup;
 			children = (
+				F7464FA7243D0944001F4FDD /* Validator */,
+				F7464FA4243D0901001F4FDD /* InstaLogger */,
 				F7464F81243CEEEA001F4FDD /* IB_LoggerTests.swift */,
 				F7464F83243CEEEA001F4FDD /* Info.plist */,
 			);
@@ -145,6 +151,22 @@
 				F7464FA1243CFF7B001F4FDD /* LogModel.swift */,
 			);
 			path = LogModel;
+			sourceTree = "<group>";
+		};
+		F7464FA4243D0901001F4FDD /* InstaLogger */ = {
+			isa = PBXGroup;
+			children = (
+				F7464FA5243D091E001F4FDD /* InstaLoggerTest.swift */,
+			);
+			path = InstaLogger;
+			sourceTree = "<group>";
+		};
+		F7464FA7243D0944001F4FDD /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				F7464FA8243D0971001F4FDD /* ValidatorTest.swift */,
+			);
+			path = Validator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7464F82243CEEEA001F4FDD /* IB_LoggerTests.swift in Sources */,
+				F7464FA9243D0971001F4FDD /* ValidatorTest.swift in Sources */,
+				F7464FA6243D091E001F4FDD /* InstaLoggerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
