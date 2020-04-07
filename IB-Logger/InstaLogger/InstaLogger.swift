@@ -20,7 +20,7 @@ public class InstaLogger: LoggerProtocol {
     public func log(message: String, level: LogLevel) {
         
         if validator.validate(message: message) {
-            
+            messages.append(<#T##newElement: String##String#>)
         }
         else {
             

@@ -9,9 +9,10 @@
 import Foundation
 
 class InstaValidator: ValidatorProtocol {
+    
     func validate(message: String) -> Bool {
         let size = message.utf8.count
-        if size >= 1024 {
+        if size <= 1024 {
             return true
         }
         else {
@@ -25,11 +26,12 @@ class InstaValidator: ValidatorProtocol {
             let messageSize = message.utf8.count
             size = size + messageSize
         }
-        if size >= 1024 {
+        if size <=  5*1024 {
             return true
         }
         else {
             return false
         }
     }
+    
 }
